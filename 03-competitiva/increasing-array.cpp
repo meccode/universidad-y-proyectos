@@ -4,13 +4,10 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Introduce el tamaño del arreglo (n): ";
     cin >> n;
-
     long long movimientos = 0;
     long long anterior;
 
-    cout << "Introduce los numeros separados por espacios:\n";
     cin >> anterior;
 
     for (int i = 1; i < n; i++)
@@ -28,7 +25,7 @@ int main()
         }
     }
 
-    cout << "Minimo de movimientos requeridos: " << movimientos << endl;
+    cout << movimientos << endl;
 
     return 0;
 }
