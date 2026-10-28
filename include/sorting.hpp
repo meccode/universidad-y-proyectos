@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <random>
 
 using namespace std;
 
@@ -39,10 +40,19 @@ void mergeSort(vector<int>& arr, int left, int right, long long& comparisons) {
     }
 }
 
-// --- QUICKSORT ---
+// --- QUICKSORT CON PIVOTE ALEATORIO ---
 int partition(vector<int>& arr, int low, int high, long long& comparisons) {
+    // Generador local para elegir un índice pivote aleatorio y evitar el peor caso O(n^2)
+    static mt19937 rng_qs(1337);
+    uniform_int_distribution<int> dist(low, high);
+    int random_idx = dist(rng_qs);
+    
+    // Intercambiar el elemento aleatorio con el último elemento para usarlo como pivote
+    swap(arr[random_idx], arr[high]);
+
     int pivot = arr[high];
     int i = (low - 1);
+    
     for (int j = low; j <= high - 1; j++) {
         comparisons++;
         if (arr[j] <= pivot) {

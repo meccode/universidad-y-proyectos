@@ -38,7 +38,7 @@ int main() {
     vector<int> sizes = {1000, 10000, 100000};
     mt19937 rng(42); // Semilla fija para reproducibilidad
 
-    ofstream csv("../results/benchmark_results.csv");
+    ofstream csv("results/benchmark_results.csv");
     csv << "Algorithm,Pattern,Size,Run,Time_ms,Comparisons\n";
 
     for (int n : sizes) {
