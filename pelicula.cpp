@@ -55,21 +55,30 @@ float Pelicula::getPrecio()
 }
 void Pelicula::mostrarInformacion()
 {
+
     cout << "DATOS DE LA PELICULA\n";
     cout << "Titulo: " << titulo << "\n";
-    cout << "Duracion: " << duracion << "min \n";
-    cout << "Precio: S/ " << std::fixed << setprecision(2) << precio << '\n';
+    cout << "Duracion: " << duracion << " min" << "\n";
+    cout << "Precio: S/ " << precio << "\n";
 }
 
 int main()
 {
     Pelicula pelicula1; // pelicula1 es una instancia de Película
-
     pelicula1.mostrarInformacion();
+    string titulo;
+    int duracion;
+    float precio;
+    cout << "escribe el titulo del  nuevo libro";
+    getline(cin, titulo);
+    cout << "escribe la duracion del libro";
+    cin >> duracion;
+    cout << "escribe el precio del libro";
+    cin >> precio;
 
-    pelicula1.setTitulo("Titanic");
-    pelicula1.setDuracion(195);
-    pelicula1.setPrecio(-25);
+    pelicula1.setTitulo(titulo);
+    pelicula1.setDuracion(duracion);
+    pelicula1.setPrecio(precio);
 
     cout << "\nDespues del registro:\n";
     pelicula1.mostrarInformacion();
