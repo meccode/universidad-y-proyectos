@@ -1,6 +1,18 @@
+## 🎥 Video de Demostración (YouTube)
+
+En cumplimiento con los requerimientos de la evaluación final, se ha grabado un video de demostración individual que detalla el funcionamiento del proyecto.
+
+- **Enlace del Video (No listado):** [PEGA_AQUI_TU_ENLACE_DE_YOUTUBE]
+- **Duración:** 6 a 10 minutos
+
+### **Contenido Estructurado de la Exposición:**
+1. **Presentación (1 min):** Identificación del estudiante, algoritmos seleccionados (MergeSort y QuickSort) y objetivos de la comparación
+2. **Explicación del Código C++ (1-2 min):** Revisión de la implementación en C++11, funciones principales, lógica algorítmica y el uso de `std::chrono`
+3. **Demostración Práctica (2-3 min):** Compilación, ejecución del programa y visualización de resultados experimentales con diversos tamaños y patrones de entrada[cite: 5, 6].
+4. **Análisis de Resultados (1-2 min):** Revisión de los archivos de estadísticas, tablas y gráficos (`figura1` y `figura2`), discutiendo el impacto de los duplicados en QuickSort[cite: 5, 6].
+5. **Conclusiones (1 min):** Hallazgos principales relacionados con la complejidad computacional teórica y empírica
+
 # Comparación Experimental y Teórica: MergeSort vs. QuickSort
-
-
 
 Repositorio para la evaluación de rendimiento y análisis estadístico de algoritmos de ordenamiento logarítmico en C++ en el marco del curso de Programación Avanzada (Universidad Nacional Jorge Basadre Grohmann).
 
@@ -101,3 +113,4 @@ Este paso generará automáticamente:
 - results/: Almacena los resultados tabulares en CSV y la subcarpeta figures/ con las gráficas del paper.
 
 - docs/: Manuscrito final en formato LaTeX / PDF del artículo científico (main.tex y carátula con logo institucional).
+
