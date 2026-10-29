@@ -1,9 +1,10 @@
+
 ## 🎥 Video de Demostración (YouTube)
 
 En cumplimiento con los requerimientos de la evaluación final, se ha grabado un video de demostración individual que detalla el funcionamiento del proyecto.
 
-- **Enlace del Video (No listado):** [PEGA_AQUI_TU_ENLACE_DE_YOUTUBE]
-- **Duración:** 6 a 10 minutos
+- **Enlace del Video (No listado):** [https://youtu.be/sT3ccV5m4X4]
+- **Duración:**  10 minutos
 
 ### **Contenido Estructurado de la Exposición:**
 1. **Presentación (1 min):** Identificación del estudiante, algoritmos seleccionados (MergeSort y QuickSort) y objetivos de la comparación

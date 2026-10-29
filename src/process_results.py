@@ -33,13 +33,14 @@ stats = df.groupby(['Algorithm', 'Pattern_Name', 'Size']).agg(
 stats.to_csv('results/summary_statistics.csv', index=False)
 print("¡Estadísticas descriptivas guardadas en results/summary_statistics.csv!")
 
-# 3. Gráfico 1: Escalabilidad (n vs. Tiempo)
+# 3. Gráfico 1: Escalabilidad (n vs. Tiempo) con escala logarítmica en ambos ejes
 plt.figure(figsize=(10, 6))
 sns.lineplot(data=df, x='Size', y='Time_ms', hue='Algorithm', style='Pattern_Name', markers=True, dashes=False)
 plt.xscale('log')
-plt.title('Escalabilidad Asintótica: Tamaños de Muestra (n) vs. Tiempo (ms)')
+plt.yscale('log')  # <-- Aplicado para resolver la compresión visual
+plt.title('Escalabilidad Asintótica: Tamaños de Muestra (n) vs. Tiempo (ms) [Log-Log]')
 plt.xlabel('Tamaño del Arreglo (n) [Escala Logarítmica]')
-plt.ylabel('Tiempo (ms)')
+plt.ylabel('Tiempo (ms) [Escala Logarítmica]')
 plt.grid(True, which="both", ls="--")
 plt.savefig('results/figures/figura1_n_vs_tiempo.png', dpi=300, bbox_inches='tight')
 plt.close()
