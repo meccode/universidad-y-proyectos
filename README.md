@@ -1,38 +1,103 @@
 # Comparación Experimental y Teórica: MergeSort vs. QuickSort
 
-Repositorio para la evaluación de rendimiento de algoritmos de ordenamiento logarítmico en C++ en el marco del curso de **Programación Avanzada** (Universidad Nacional Jorge Basadre Grohmann).
 
-## 🛠️ Especificaciones Técnicas del Entorno
-- **Sistema Operativo:** [Ej. Ubuntu 22.04 LTS / Windows 11]
-- **Procesador (CPU):** [Ej. Intel Core i5-11400H @ 2.70GHz]
-- **Memoria RAM:** [Ej. 16 GB DDR4]
-- **Compilador:** g++ (GCC) con estándar C++11 o superior.
-- **Semilla Pseudoaleatoria:** 42 (para garantizar reproducibilidad).
 
-## ⚙️ Instrucciones de Compilación y Ejecución
-Para compilar y ejecutar el benchmark de pruebas y generar los registros en `.csv`:
-```bash
+Repositorio para la evaluación de rendimiento y análisis estadístico de algoritmos de ordenamiento logarítmico en C++ en el marco del curso de Programación Avanzada (Universidad Nacional Jorge Basadre Grohmann).
+
+
+
+======================================================================
+
+1. ESPECIFICACIONES TÉCNICAS DEL ENTORNO
+
+======================================================================
+
+- Sistema Operativo: Microsoft Windows 11 Home (64-bit)
+
+- Procesador (CPU): Intel(R) Core(TM) i5-7400 CPU @ 3.00 GHz (4 núcleos, 4 hilos)
+
+- Memoria RAM: 16 GB DDR4 a 2400 MHz (Doble canal)
+
+- Compilador: GCC (g++ versión 11.2.0 MinGW-w64) con estándar C++11 y optimización -O2.
+
+- Semilla Pseudoaleatoria: 42 (std::mt19937) para garantizar la total reproducibilidad de las muestras.
+
+
+
+======================================================================
+
+2. PASO A PASO PARA LA EJECUCIÓN Y GENERACIÓN DE ARCHIVOS CLAVE
+
+======================================================================
+
+
+
+Sigue este orden secuencial para compilar las pruebas, procesar la estadística y generar las figuras del artículo científico:
+
+
+
+Paso 1: Compilar y ejecutar el Benchmark en C++
+
+--------------------------------------------------
+
+Genera los datos crudos de las 900 ejecuciones experimentales (guardándose en results/benchmark_results.csv):
+
+
+
 cd src
-g++ -std=c++11 -O3 main.cpp -o benchmark
+
+g++ -std=c++11 -O2 main.cpp -o benchmark
+
 ./benchmark
 
-📁 Estructura del Repositorio
-src/: Código fuente de las pruebas experimentales.
+cd ..
 
-include/: Cabeceras con la implementación de los algoritmos.
 
-results/: Archivos de salida crudos en formato CSV.
 
-docs/: Manuscrito final en PDF del artículo científico.
+Paso 2: Instalar dependencias de Python
 
-## 4. Control de Versiones (Commits Iniciales)
+--------------------------------------------------
 
-Para demostrar el avance documentado ante el docente, realiza los siguientes commits secuenciales en tu terminal[cite: 1]:
+Asegúrate de tener instaladas las librerías necesarias para el análisis de datos y graficación:
 
-1. `git init`
-2. `git add .` -> `git commit -m "feat: estructura inicial del repositorio y carpetas obligatorias"`
-3. `git add include/ src/` -> `git commit -m "refactor: implementacion de algoritmos MergeSort y QuickSort con std::chrono"`
-4. `git add README.md` -> `git commit -m "docs: redaccion del README con especificaciones tecnicas y de compilacion"`
 
----
 
+python -m pip install --user pandas matplotlib seaborn
+
+
+
+Paso 3: Procesar los datos y generar gráficos automáticamente
+
+--------------------------------------------------
+
+Ejecuta el script de procesamiento estadístico que leerá los resultados crudos y generará las tablas de resumen junto con las figuras clave en formato de alta resolución:
+
+
+
+python src/process_results.py
+
+
+
+Este paso generará automáticamente:
+
+- results/summary_statistics.csv (Estadísticas descriptivas de media, mediana, desviación estándar y comparaciones).
+
+- results/figures/figura1_n_vs_tiempo.png (Curva de escalabilidad asintótica).
+
+- results/figures/figura2_boxplot_100k.png (Diagrama de cajas para n = 100,000).
+
+
+
+======================================================================
+
+3. ESTRUCTURA DEL REPOSITORIO
+
+======================================================================
+
+- src/: Código fuente en C++ de las pruebas y script de procesamiento en Python (process_results.py).
+
+- include/: Cabeceras con la implementación algorítmica de MergeSort y QuickSort.
+
+- results/: Almacena los resultados tabulares en CSV y la subcarpeta figures/ con las gráficas del paper.
+
+- docs/: Manuscrito final en formato LaTeX / PDF del artículo científico (main.tex y carátula con logo institucional).

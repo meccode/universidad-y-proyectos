@@ -1,0 +1,35 @@
+# Archivos ejecutables y binarios de C++
+
+*.exe
+
+*.out
+
+*.o
+
+benchmark
+
+
+
+# Entornos virtuales y cachés de Python
+
+__pycache__/
+
+*.pyc
+
+
+
+# Archivos de resultados y carpetas de gráficos generados por código
+
+results/benchmark_results.csv
+
+results/summary_statistics.csv
+
+results/figures/*.png
+
+
+
+# Archivos temporales del sistema operativo
+
+Thumbs.db
+
+.DS_Store
