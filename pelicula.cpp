@@ -69,7 +69,7 @@ int main()
 
     pelicula1.setTitulo("Titanic");
     pelicula1.setDuracion(195);
-    pelicula1.setPrecio(12.50);
+    pelicula1.setPrecio(-25);
 
     cout << "\nDespues del registro:\n";
     pelicula1.mostrarInformacion();
